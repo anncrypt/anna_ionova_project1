@@ -28,6 +28,9 @@ header {
     min-height: 100vh;
     color: #f6f6f6;
     position: relative;
+    /* padding to account for weird space
+    on header bottom in chrome */
+    padding: 1px;
 }
 
 p {
@@ -262,6 +265,7 @@ h4 {
 
 /* BUTTONS STYLES */
 .button {
+    text-transform: uppercase;
     background: #8dd7e9;
     border: 1px solid #8dd7e9;
     height: 46px;
@@ -358,6 +362,7 @@ footer a:hover {
 }
 
 footer .button {
+    text-transform: uppercase;
     height: 50px;
     font-size: 1.8rem;
     text-align: center;
