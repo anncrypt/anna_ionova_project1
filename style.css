@@ -47,6 +47,8 @@ p {
     /* border: 2px solid tomato; */
 }
 
+
+
 .narrowWrapper {
     max-width: 1280px;
     width: 80%;
@@ -209,7 +211,9 @@ h4 {
 
 .blogImageContainer img {
     width: 100%;
+    object-fit: cover; /**/
     display: block;
+    /* min-height: 460px;  */
 }
 
 .blogPostContent {
@@ -454,18 +458,16 @@ footer .button:hover {
 
 
 @media (max-width: 992px) {
+
+    
     .socialLinks {
         display: none;
     }
 
     h1 {
         font-size: 10rem;
-        margin: 120px;
+        /* margin: 120px; */
     }
-
-    /* h2 {
-
-    } */
     
     .largestFont span {
         font-size: 2.8rem;
@@ -478,10 +480,10 @@ footer .button:hover {
         left: 10px;
     }
 
-    /* section {
-        margin: 50px 20px;
-        padding:0;
-    } */
+    section {
+        /* margin: 50px 20px; */
+        /* padding: 5px; */
+    }
     
     .pageNav {
         padding: 10px 0;
@@ -502,9 +504,149 @@ footer .button:hover {
 
     .blogPostContent {
         width: 100%;
+        margin: 50px auto;
+    }
+
+    /* 
+        Reverse the order of elements
+        without flexbox
+    */
+
+    .blogPost:last-child {
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+    }
+
+    .blogPost:last-child .blogImageContainer,
+    .blogPost:last-child .blogPostContent {
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+    }
+
+    .blogPostContentWrapper {
+        width: 100%
+    }
+
+    .aboutMeContent {
+        width: 100%;
+        text-align: center;
+    }
+
+    .aboutMeContent h2 {
+        text-align: center;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .aboutMePic {
+        width: 100%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    .aboutMePic img {
+        height: auto;
+        width: 300px;
     }
 }
 
 @media (max-width: 768px) {
 
+
+    .largestFont {
+        font-size: 7rem;
+    }
+
+    .largestFont span {
+        font-size: 2.2rem;
+    }
+
+    .gallery {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .gallery ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .gallery .galleryItem img {
+        display: block;
+    }
+
+    .gallery .galleryItem {
+        width: 50%;
+        margin: 0;
+    }
+
+    .gallery .galleryItem:last-child {
+        display: none;
+    }
+
+    .subscriptionForm h4,
+    .subscriptionForm p {
+        text-align: center;
+    }
+
+    .subscriptionForm form input,
+    .subscriptionForm form button {
+        width: 100%;
+    }
+
+    .subscriptionForm form input {
+        text-align: center;
+    }
+
+    .subscriptionForm form button {
+        position: initial;
+    }
+
+    .contactInfo,
+    .footerNav,
+    .recentBlogPosts {
+        width: 100%;
+        /* text-align: center; */
+        margin-bottom: 40px;
+    }
+
+    .contactInfo p,
+    .contactInfo h4 {
+        text-align: center;
+    }
+
+    .contactInfo p {
+        margin-bottom: 5px;
+    }
+
+    .footerNav h4,
+    .footerNav ul li {
+        text-align: center;
+    }
+    
+    .footerNav ul li,
+    .recentBlogPosts ul li {
+        margin-bottom: 5px;
+    }
+
+    .recentBlogPosts {
+        margin-bottom: 0;
+    }
+
+    .recentBlogPosts h4,
+    .recentBlogPosts ul li {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 540px) {
+    /* .gallery .galleryItem {
+        width: 100%;
+    }
+
+    .gallery .galleryItem:nth-child(2) {
+        display: none;
+    } */
 }
