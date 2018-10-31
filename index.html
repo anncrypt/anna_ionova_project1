@@ -6,8 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Poppins:400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
 
+    <!-- jquery for hamburger menu -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+    crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
     <title>Summit</title>
 </head>
 <body>
@@ -27,30 +33,25 @@
                         <li><a href="#sectionContact">Contact</a></li>
                     </ul>
                 </nav>
-                <!-- HAMBURGERRR
-                    https://medium.com/@heyoka/responsive-pure-css-off-canvas-hamburger-menu-aebc8d11d793
-                <header>
-                    <a href="#mainMenu" class="menuToggle">
-                        <span class="fas fa-bars"></span>
-                    </a>
-                
-                    <h1 class="logo">hamburgers</h1>
-                
-                    <nav id="mainMenu" class="main-menu">
-                        <a href="#mainMenuToggle" class="menuClose">
-                            <span class="fa fa-close"></span>
+
+                <!-- hamburger menu starts - hidden for desctop version-->
+                <a href="#" class="openHamburger">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <div class="mobileNav clearfix">
+                    <div class="mobileNavControls">
+                        <a href="#" class="closeHamburger">
+                            <i class="fas fa-times"></i>
                         </a>
-                        <ul>
-                            <li><a href="#sectionHome">Home</a></li>
-                            <li><a href="#sectionAbout">About</a></li>
-                            <li><a href="#sectionBlog">Blog</a></li>
-                            <li><a href="#sectionContact">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <a href="#mainMenuToggle" class="backdrop" hidden></a>
-                </header>
-                
-                -->
+                    </div>
+                    <ul class="mobileNavList">
+                        <li><a href="#sectionHome">Home</a></li>
+                        <li><a href="#sectionAbout">About</a></li>
+                        <li><a href="#sectionBlog">Blog</a></li>
+                        <li><a href="#sectionContact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- hamburger menu ends -->
                 <!-- mainNav bar ends -->
             </div>
             <!-- narrowWrapper ends -->
@@ -200,5 +201,35 @@
         <!-- footer ends -->
     </div>
     <!-- main wrapper ends -->
+
+    <!-- script for hamburger menu -->
+    <script>
+        $(document).ready(function() {
+            // when we click on .openHamburger,
+            // it should open
+            $('.openHamburger').on('click', function() {
+                // slide the menu into view from left
+                $('.mobileNav').toggle("slide", { direction: "right" }); 
+                // Add a class to body that stops scrolling
+                $('body').addClass('preventAllScrollingOnBody');
+            });
+            // when we click on .closeHamburger,
+            // it should close
+            $('.closeHamburger').on('click', function () {
+                // slide the menu out of view from left
+                $('.mobileNav').toggle("slide", { direction: "right" });
+                // Remove a class that stops scrolling from body
+                $('body').removeClass('preventAllScrollingOnBody');
+            });
+            // When we click on any link in the list
+            // the menu should close
+            $('.mobileNavList a').on('click', function() {
+                // Hide mobile nav menu
+                $('.mobileNav').hide();
+                // Remove a class that stops scrolling from body
+                $('body').removeClass('preventAllScrollingOnBody');
+            });
+        });
+    </script>
 </body>
 </html>

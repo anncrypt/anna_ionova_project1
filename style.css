@@ -44,9 +44,7 @@ p {
 .mainWrapper {
     width: 100%;
     max-width: 1600px;
-    /* border: 2px solid tomato; */
 }
-
 
 
 .narrowWrapper {
@@ -54,7 +52,6 @@ p {
     width: 80%;
     padding: 20px 0;
     margin: 0 auto;
-    /* border: 2px solid tomato; */
 }
 
 
@@ -194,6 +191,7 @@ h4 {
     padding: 60px 0;
 }
 
+
 /* BLOGPOSTS SECTION */
 .blogPosts {
     background: #f6f6f6;
@@ -211,9 +209,8 @@ h4 {
 
 .blogImageContainer img {
     width: 100%;
-    object-fit: cover; /**/
+    object-fit: cover;
     display: block;
-    /* min-height: 460px;  */
 }
 
 .blogPostContent {
@@ -270,10 +267,8 @@ h4 {
     height: 46px;
     padding: 8px 30px;
     color: #0f0f0f;
-    /* text-transform: uppercase; */
     font-weight: 700;
     font-size: 1.8rem;
-    /* font-family: 'Poppins', sans-serif; */
 }
 
 .button:hover {
@@ -282,8 +277,6 @@ h4 {
     color: #f6f6f6;
     transition: ease-in-out 0.3s;
 }
-
-
 
 
 /* GALLERY STYLES */
@@ -388,7 +381,6 @@ footer .button:hover {
     margin:0;
     padding: 0;
     text-align: left;
-    
 }
 
 .footerNav ul {
@@ -403,6 +395,20 @@ footer .button:hover {
 
 .copyright p {
     margin: 0;
+}
+
+
+/* HAMBURGER MENU DEFAULTS */
+.mobileNav {
+    display: none;
+}
+
+.openHamburger {
+    display: none;
+}
+
+.preventAllScrollingOnBody {
+    overflow: hidden;
 }
 
 
@@ -439,14 +445,6 @@ footer .button:hover {
         margin: 0;
     }
 
-    /* .blogPostContentWrapper h3 {
-        font-size: 2.5rem;
-    }
-
-    .blogPostContentWrapper p {
-        line-height: 2.5rem;
-    } */
-
     .aboutMePic img {
         margin-top: 15px;
     }
@@ -459,14 +457,8 @@ footer .button:hover {
 
 @media (max-width: 992px) {
 
-    
-    .socialLinks {
-        display: none;
-    }
-
     h1 {
         font-size: 10rem;
-        /* margin: 120px; */
     }
     
     .largestFont span {
@@ -474,15 +466,13 @@ footer .button:hover {
     }
 
     h2.companyLogo {
-        /* padding: 0; */
         position: absolute;
         top: 10px;
         left: 10px;
     }
 
-    section {
-        /* margin: 50px 20px; */
-        /* padding: 5px; */
+    .socialLinks {
+        display: none;
     }
     
     .pageNav {
@@ -498,19 +488,15 @@ footer .button:hover {
         margin-bottom: 0;
     }
 
-    .blogImageContainer {
-        width: 100%;
+    .blogPostContent,
+    .blogImageContainer,
+    .blogPostContentWrapper {
+        width: 100%
     }
 
     .blogPostContent {
-        width: 100%;
         margin: 50px auto;
     }
-
-    /* 
-        Reverse the order of elements
-        without flexbox
-    */
 
     .blogPost:last-child {
         -webkit-transform: scaleY(-1);
@@ -521,10 +507,6 @@ footer .button:hover {
     .blogPost:last-child .blogPostContent {
         -webkit-transform: scaleY(-1);
         transform: scaleY(-1);
-    }
-
-    .blogPostContentWrapper {
-        width: 100%
     }
 
     .aboutMeContent {
@@ -551,7 +533,71 @@ footer .button:hover {
 }
 
 @media (max-width: 768px) {
+    .mainNav {
+        display: none;
+    }
 
+
+    /* HAMBURGER MENU */
+    .openHamburger {
+        display: block;
+        float: right;
+    }
+
+    .openHamburger .fas,
+     .closeHamburger .fas {
+        color: #f6f6f6;
+        font-size: 3rem;
+    }
+
+
+    /* OPEN HAMBURGER */
+    .sectionHome .narrowWrapper {
+        position: relative;
+    }
+
+    .mobileNavControls {
+        text-align: right;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .mobileNavControls a {
+        display: block;
+    }
+
+    .mobileNav {
+        background: #215a6d;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .mobileNavList {
+        margin-top: 20px;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .mobileNavList li {
+        margin-bottom: 20px;
+    }
+
+    .mobileNavList li a {
+        text-decoration: none;
+        color: #f6f6f6;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .mobileNavList li:active {
+        background: rgba(0, 0, 0, 0.192);
+    }
+
+    /* END OF HAMBURGER MENU */
 
     .largestFont {
         font-size: 7rem;
@@ -572,13 +618,13 @@ footer .button:hover {
         padding: 0;
     }
 
-    .gallery .galleryItem img {
-        display: block;
-    }
-
     .gallery .galleryItem {
         width: 50%;
         margin: 0;
+    }
+
+    .gallery .galleryItem img {
+        display: block;
     }
 
     .gallery .galleryItem:last-child {
@@ -607,7 +653,6 @@ footer .button:hover {
     .footerNav,
     .recentBlogPosts {
         width: 100%;
-        /* text-align: center; */
         margin-bottom: 40px;
     }
 
@@ -638,15 +683,4 @@ footer .button:hover {
     .recentBlogPosts ul li {
         text-align: center;
     }
-}
-
-
-@media (max-width: 540px) {
-    /* .gallery .galleryItem {
-        width: 100%;
-    }
-
-    .gallery .galleryItem:nth-child(2) {
-        display: none;
-    } */
 }
